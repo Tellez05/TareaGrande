@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
+#include <fstream>
 using namespace std; 
 
 class Documento{
@@ -11,5 +11,6 @@ class Documento{
     
     public: 
     void buscar(); 
+
     
 };
