@@ -3,8 +3,8 @@
 
 Documento::Documento(string linea){
     stringstream ss(linea); 
-    
-    string mes, dia , hora, ip, v1, v2, v3 , v4 ,v5 ,v6; 
+    int dia; 
+    string mes, hora, ip, v1, v2, v3 , v4 ,v5 ,v6; 
     ss >> mes >> dia >> hora >> ip >> v1 >> v2 >> v3 >> v4 >> v5 >> v6; 
     
     string razon; 

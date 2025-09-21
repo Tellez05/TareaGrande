@@ -13,7 +13,7 @@ class Documento{
     
     private: 
     string Mes; 
-    string Dia; 
+    int Dia; 
     string Hora; 
     string IP; 
     string Razon; 
@@ -21,6 +21,7 @@ class Documento{
     public: 
     Documento(string linea); 
     void Imprimir(); 
+
     
 };
 
