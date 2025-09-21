@@ -15,6 +15,9 @@ Documento::Documento(string linea){
         razon += espacio + v5 + espacio + v6; 
     }
 
-    
-
+    Mes = mes; 
+    Dia = dia; 
+    Hora = hora; 
+    IP = ip; 
+    Razon = razon; 
 }   
