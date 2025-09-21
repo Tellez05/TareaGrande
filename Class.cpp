@@ -21,3 +21,8 @@ Documento::Documento(string linea){
     IP = ip; 
     Razon = razon; 
 }   
+
+void Documento::Imprimir(){
+    cout<<Mes<<" "<<Dia<<" "<<Hora<<" "<<IP<<" "<<Razon<<endl; 
+
+}   
