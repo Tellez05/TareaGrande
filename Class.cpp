@@ -1,6 +1,5 @@
 #include "Class.h"
 
-
 Documento::Documento(string linea){
     stringstream ss(linea); 
     int dia; 
