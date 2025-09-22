@@ -9,9 +9,12 @@ Documento::Documento(string linea){
     string razon; 
     string espacio {" "}; 
     
-    razon += v1 + espacio + v2 + espacio + v3 + espacio + v4; 
+    razon += v1 + espacio + v2; 
     if(!v5.empty()){
         razon += espacio + v5 + espacio + v6; 
+    }
+    else if (!v3.empty()){
+        razon += espacio + v3 +espacio + v4 + espacio + v5 + espacio + v6; 
     }
 
     Mes = mes; 
