@@ -40,30 +40,30 @@ bool CompararMeses(Documento *mes1, Documento *mes2){
 
 void ArreglarArreglo(vector<Documento*> Libreria){ 
 
-    vector<Documento*> *MesJUN = new vector<Documento*>; 
-    vector<Documento*> *MesJUL =new vector<Documento*>; 
-    vector<Documento*> *MesAUG =new vector<Documento*>; 
-    vector<Documento*> *MesSEP = new vector<Documento*>; 
-    vector<Documento*> *MesOCT = new vector<Documento*>; 
+    vector<Documento*> MesJUN ; 
+    vector<Documento*> MesJUL ; 
+    vector<Documento*> MesAUG ; 
+    vector<Documento*> MesSEP ; 
+    vector<Documento*> MesOCT ; 
 
     for(auto *linea: Libreria){
         if(linea->RegresarMes() == "Jun"){
-            MesJUN->push_back(linea);
+            MesJUN.push_back(linea);
         }
         else if(linea->RegresarMes() == "Jul"){
-            MesJUL->push_back(linea);            
+            MesJUL.push_back(linea);            
         }
         else if(linea->RegresarMes() == "Aug"){
-            MesAUG->push_back(linea);
+            MesAUG.push_back(linea);
         }
         else if(linea->RegresarMes() == "Sep"){
-            MesSEP->push_back(linea);
+            MesSEP.push_back(linea);
         }else{
-            MesOCT->push_back(linea);
+            MesOCT.push_back(linea);
         }
+        arreglarminiarreglos(MesAUG, Libreria); 
     }
 
-    delete MesJUL, MesJUN, MesAUG, MesOCT, MesSEP; 
 }
 
 void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> LibreriaGrande){
@@ -77,5 +77,5 @@ void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> 
         }
         Libreriachica[j+1] = Keypuntero;
     }
-
+        ImprimirTodo(Libreriachica); 
 }
