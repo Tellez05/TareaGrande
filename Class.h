@@ -21,6 +21,7 @@ class Documento{
     Documento(string linea); 
     void Imprimir(); 
     string RegresarMes(); 
+    int regresarDia(); 
 
     
 };

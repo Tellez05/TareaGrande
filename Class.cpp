@@ -33,3 +33,7 @@ void Documento::Imprimir(){
 string Documento::RegresarMes(){
     return Mes; 
 }
+
+int Documento::regresarDia(){ 
+    return Dia; 
+}
