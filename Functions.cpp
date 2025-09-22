@@ -36,3 +36,31 @@ bool CompararMeses(Documento *mes1, Documento *mes2){
     return false; 
 
 }
+
+
+void ArreglarArreglo(vector<Documento*> Libreria){ 
+    vector<Documento*> *MesJUN = new vector<Documento*>; 
+    vector<Documento*> *MesJUL =new vector<Documento*>; 
+    vector<Documento*> *MesAUG =new vector<Documento*>; 
+    vector<Documento*> *MesSEP = new vector<Documento*>; 
+    vector<Documento*> *MesOCT = new vector<Documento*>; 
+
+    for(auto *linea: Libreria){
+        if(linea->RegresarMes() == "Jun"){
+            MesJUN->push_back(linea);
+        }
+        else if(linea->RegresarMes() == "Jul"){
+            MesJUL->push_back(linea);            
+        }
+        else if(linea->RegresarMes() == "Aug"){
+            MesAUG->push_back(linea);
+        }
+        else if(linea->RegresarMes() == "Sep"){
+            MesSEP->push_back(linea);
+        }else{
+            MesOCT->push_back(linea);
+        }
+    }
+
+    delete MesJUL, MesJUN, MesAUG, MesOCT, MesSEP; 
+}
