@@ -31,7 +31,8 @@ bool CompararMeses(Documento *mes1, Documento *mes2){
         
     }
     if(I2 > I1){
+        return true; 
     }
-
+    return false; 
 
 }
