@@ -21,6 +21,7 @@ class Documento{
     public: 
     Documento(string linea); 
     void Imprimir(); 
+    string RegresarMes(); 
 
     
 };

@@ -7,4 +7,4 @@ void CargarLibreria(vector<Documento*> &Libreria);
 void ImprimirTodo(vector<Documento*> Libreria); 
 
 
-void CompararMeses(); 
+bool CompararMeses(Documento *mes1, Documento *mes2); 

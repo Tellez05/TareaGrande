@@ -25,3 +25,8 @@ void Documento::Imprimir(){
     cout<<Mes<<" "<<Dia<<" "<<Hora<<" "<<IP<<" "<<Razon<<endl; 
 
 }   
+
+
+string Documento::RegresarMes(){
+    return Mes; 
+}
