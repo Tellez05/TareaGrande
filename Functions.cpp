@@ -61,6 +61,6 @@ void ArreglarArreglo(vector<Documento*> Libreria){
             MesOCT->push_back(linea);
         }
     }
-
+    ImprimirTodo(*MesJUN); 
     delete MesJUL, MesJUN, MesAUG, MesOCT, MesSEP; 
 }

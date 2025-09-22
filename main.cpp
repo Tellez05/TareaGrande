@@ -4,6 +4,6 @@
 int main(){
     vector<Documento*> Libreria; 
     CargarLibreria(Libreria); 
-    ImprimirTodo(Libreria); 
+    ArreglarArreglo(Libreria); 
     return 0; 
 }
