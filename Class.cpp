@@ -28,7 +28,20 @@ void Documento::Imprimir(){
     cout<<Mes<<" "<<Dia<<" "<<Hora<<" "<<IP<<" "<<Razon<<endl; 
 
 }   
-
+void Documento::Ponertiempo(string linea){
+    string creador {linea[0]}; 
+    string creador2 {linea[3]};
+    string creador3 {linea[6]}; 
+    creador += linea[1];
+    creador2 += linea[4];
+    creador3 += linea[7];
+    stringstream ss(creador);
+    ss>>H;
+    stringstream ss2(creador2);
+    ss2>>Minuto;
+    stringstream ss3(creador3);
+    ss3>>Segundos;
+}
 
 string Documento::RegresarMes(){
     return Mes; 
