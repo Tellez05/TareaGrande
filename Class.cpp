@@ -46,7 +46,12 @@ void Documento::Ponertiempo(string linea){
 string Documento::RegresarMes(){
     return Mes; 
 }
-
+int Documento::regresarH(){
+    return H;
+}
+int Documento::RegresarMinutos(){
+    return Minuto;
+}
 int Documento::regresarDia(){ 
     return Dia; 
 }

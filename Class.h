@@ -26,6 +26,8 @@ class Documento{
     void Ponertiempo(string linea); 
     string RegresarMes(); 
     int regresarDia(); 
+    int regresarH();
+    int RegresarMinutos();
 
     
 };
