@@ -38,23 +38,27 @@ bool CompararMeses(Documento *mes1, Documento *mes2){
 }
 
 
-void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> &LibreriaGrande){
+void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> &LibreriaGrande,int &contador){
     for(int  i {0}; i < Libreriachica.size();i++){
         Documento* Keypuntero {Libreriachica[i]};
         int key {Keypuntero -> regresarDia()}; 
         int j {i-1};
         while(j >= 0 && Libreriachica.at(j) -> regresarDia() > key ){
             Libreriachica[j+1] = Libreriachica[j];
-            j--; 
+            j--;   
         }
         Libreriachica[j+1] = Keypuntero;
     }
-        ImprimirTodo(Libreriachica); 
+
+    for(int k {0}; k < Libreriachica.size(); k++){
+        LibreriaGrande[contador] = Libreriachica[k];
+        contador ++; 
+    }
 }
 
 
 void ArreglarArreglo(vector<Documento*> &Libreria){ 
-
+    int contador {0};
     vector<Documento*> MesJUN ; 
     vector<Documento*> MesJUL ; 
     vector<Documento*> MesAUG ; 
@@ -77,6 +81,10 @@ void ArreglarArreglo(vector<Documento*> &Libreria){
             MesOCT.push_back(linea);
         }
     }
-    Arreglarminiarreglos(MesAUG, Libreria); 
-
+    Arreglarminiarreglos(MesJUN, Libreria,contador); 
+    Arreglarminiarreglos(MesJUL, Libreria,contador);     
+    Arreglarminiarreglos(MesAUG, Libreria,contador);
+    Arreglarminiarreglos(MesSEP, Libreria,contador);
+    Arreglarminiarreglos(MesOCT, Libreria,contador);
+    ImprimirTodo(Libreria);
 }
