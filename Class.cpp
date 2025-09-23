@@ -52,6 +52,9 @@ int Documento::regresarH(){
 int Documento::RegresarMinutos(){
     return Minuto;
 }
+int Documento::RegresarSegundos(){
+    return Segundos; 
+}
 int Documento::regresarDia(){ 
     return Dia; 
 }
