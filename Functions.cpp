@@ -55,9 +55,12 @@ void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> 
         contador ++; 
     }
 }
-
+void ArreglarHora(vector<Documento*> &Libreria){
+       
+}
 
 void ArreglarArreglo(vector<Documento*> &Libreria){ 
+
     int contador {0};
     vector<Documento*> MesJUN; 
     vector<Documento*> MesJUL; 
