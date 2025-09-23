@@ -59,11 +59,11 @@ void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> 
 
 void ArreglarArreglo(vector<Documento*> &Libreria){ 
     int contador {0};
-    vector<Documento*> MesJUN ; 
-    vector<Documento*> MesJUL ; 
-    vector<Documento*> MesAUG ; 
-    vector<Documento*> MesSEP ; 
-    vector<Documento*> MesOCT ; 
+    vector<Documento*> MesJUN; 
+    vector<Documento*> MesJUL; 
+    vector<Documento*> MesAUG; 
+    vector<Documento*> MesSEP; 
+    vector<Documento*> MesOCT; 
 
     for(auto *linea: Libreria){
         if(linea->RegresarMes() == "Jun"){
