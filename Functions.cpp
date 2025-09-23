@@ -15,29 +15,9 @@ void ImprimirTodo(vector<Documento*> Libreria){
         Linea -> Imprimir(); 
     }
 }
-
-bool CompararMeses(Documento *mes1, Documento *mes2){
-    int Size {5};
-    int I1 {0};
-    int I2 {0}; 
-    string Meses[Size] {"Jun", "Jul", "Aug", "Sep", "Oct"}; 
-    for(int i {0}; i < Size-1; i++){
-        if(mes1->RegresarMes() == Meses[i]){
-            I1 = i; 
-        }
-        if(mes2->RegresarMes() == Meses[i]){
-            I2 = i; 
-        }
-        
-    }
-    if(I2 > I1){
-        return true; 
-    }
-    return false; 
+void ArreglarTiempo(vector<Documento*> &Libreria){
 
 }
-
-
 void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> &LibreriaGrande,int &contador){
     for(int  i {0}; i < Libreriachica.size();i++){
         Documento* Keypuntero {Libreriachica[i]};
