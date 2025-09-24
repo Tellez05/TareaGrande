@@ -99,3 +99,13 @@ void ArreglarArreglo(vector<Documento*> &Libreria){
     ArreglarTiempoCompleto(Libreria);
     ImprimirTodo(Libreria);
 }
+
+void EntregarDocumento(vector<Documento*> Libreria){
+    
+    ofstream Myfile("S");
+    for(auto *Linea:Libreria){
+        Myfile << Linea->RegresarLinea() <<endl;;
+    } 
+
+    Myfile.close();
+}

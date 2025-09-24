@@ -12,6 +12,7 @@ class Documento{
     
     private: 
     string Mes; 
+    string diaString; 
     int Dia; 
     string Hora; 
     int H ; 
@@ -23,13 +24,14 @@ class Documento{
     public: 
     Documento(string linea); 
     void Imprimir(); 
+    void PonerStringDia(int linea); 
     void Ponertiempo(string linea); 
     string RegresarMes(); 
     int regresarDia(); 
     int regresarH();
     int RegresarMinutos();
     int RegresarSegundos(); 
-
+    string RegresarLinea(); 
     
 };
 

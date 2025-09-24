@@ -6,3 +6,4 @@ void ImprimirTodo(vector<Documento*> Libreria);
 void ArreglarArreglo(vector<Documento*> &Libreria); 
 void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> &LibreriaGrande, int &contador); 
 void ArreglarTiempoCompleto(vector<Documento*> &Libreria);
+void EntregarDocumento(vector<Documento*> Libreria); 
