@@ -28,6 +28,7 @@ class Documento{
     int regresarDia(); 
     int regresarH();
     int RegresarMinutos();
+    int RegresarSegundos();
 
     
 };
