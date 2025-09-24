@@ -43,11 +43,9 @@ void ArreglarTiempoCompleto(vector<Documento*> &Libreria) {
     for(int i = 0; i < n; i++){
         int diaActual = Libreria[i]->regresarDia();
         int j = i;
-        // Encontrar todos los documentos del mismo día
         while(j < n && Libreria[j]->regresarDia() == diaActual){
             j++;
         }
-        // insertion sort por hora, minuto y segundo dentro del mismo día
         for(int k = i + 1; k < j; k++){
             Documento* key = Libreria[k];
             int keyHora = key->regresarH();
@@ -67,7 +65,7 @@ void ArreglarTiempoCompleto(vector<Documento*> &Libreria) {
             }
             Libreria[l+1] = key;
         }
-        i = j - 1; // saltamos al siguiente día
+        i = j - 1; 
     }
 }
 
