@@ -15,11 +15,7 @@ void ImprimirTodo(vector<Documento*> Libreria){
         Linea -> Imprimir(); 
     }
 }
-void ArreglarTiempo(vector<Documento*> &Libreria){
-    for(int i {0}; i<Libreria.size(); i++){
-        Documento* PTR {Libreria[i]};
-    }
-}
+
 void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> &LibreriaGrande,int &contador){
     for(int  i {0}; i < Libreriachica.size();i++){
         Documento* Keypuntero {Libreriachica[i]};
