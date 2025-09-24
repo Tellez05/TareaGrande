@@ -37,12 +37,42 @@ void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> 
         contador ++; 
     }
 }
-void ArreglarHora(vector<Documento*> &Libreria){
-       
+
+void ArreglarTiempoCompleto(vector<Documento*> &Libreria) {
+    int n = Libreria.size();
+    for(int i = 0; i < n; i++){
+        int diaActual = Libreria[i]->regresarDia();
+        int j = i;
+        // Encontrar todos los documentos del mismo día
+        while(j < n && Libreria[j]->regresarDia() == diaActual){
+            j++;
+        }
+        // insertion sort por hora, minuto y segundo dentro del mismo día
+        for(int k = i + 1; k < j; k++){
+            Documento* key = Libreria[k];
+            int keyHora = key->regresarH();
+            int keyMin = key->RegresarMinutos();
+            int keySeg = key->RegresarSegundos();
+            int l = k - 1;
+            while(l >= i){
+                Documento* curr = Libreria[l];
+                if(curr->regresarH() > keyHora ||
+                   (curr->regresarH() == keyHora && curr->RegresarMinutos() > keyMin) ||
+                   (curr->regresarH() == keyHora && curr->RegresarMinutos() == keyMin && curr->RegresarSegundos() > keySeg)) {
+                    Libreria[l+1] = Libreria[l];
+                    l--;
+                } else {
+                    break;
+                }
+            }
+            Libreria[l+1] = key;
+        }
+        i = j - 1; // saltamos al siguiente día
+    }
 }
 
 void ArreglarArreglo(vector<Documento*> &Libreria){ 
-
+    int contadorH {0}; 
     int contador {0};
     vector<Documento*> MesJUN; 
     vector<Documento*> MesJUL; 
@@ -70,6 +100,8 @@ void ArreglarArreglo(vector<Documento*> &Libreria){
     Arreglarminiarreglos(MesJUL, Libreria,contador);     
     Arreglarminiarreglos(MesAUG, Libreria,contador);
     Arreglarminiarreglos(MesSEP, Libreria,contador);
-    Arreglarminiarreglos(MesOCT, Libreria,contador);
+    Arreglarminiarreglos(MesOCT, Libreria,contador); 
+
+    ArreglarTiempoCompleto(Libreria);
     ImprimirTodo(Libreria);
 }

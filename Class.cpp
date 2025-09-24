@@ -16,12 +16,13 @@ Documento::Documento(string linea){
     else if (!v3.empty()){
         razon += espacio + v3 +espacio + v4 + espacio + v5 + espacio + v6; 
     }
-
+     
     Mes = mes; 
     Dia = dia; 
     Hora = hora; 
     IP = ip; 
     Razon = razon; 
+    Ponertiempo(Hora);
 }   
 
 void Documento::Imprimir(){
