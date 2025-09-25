@@ -37,16 +37,16 @@ void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> 
 void ArreglarTiempoCompleto(vector<Documento*> &Libreria) {
     int n = Libreria.size();
     for(int i {0}; i < n; i++){
-        int diaActual = Libreria[i]->regresarDia();
+        int diaActual {Libreria[i]->regresarDia()};
         int j {i};
         while(j < n && Libreria[j]->regresarDia() == diaActual){
             j++;
         }
         for(int k {i + 1}; k < j; k++){
-            Documento* key = Libreria[k];
-            int keyHora = key->regresarH();
-            int keyMin = key->RegresarMinutos();
-            int keySeg = key->RegresarSegundos();
+            Documento* key {Libreria[k]};
+            int keyHora {key->regresarH()};
+            int keyMin  {key->RegresarMinutos()};
+            int keySeg  {key->RegresarSegundos()};
             int l = k - 1;
             while(l >= i){
                 Documento* curr {Libreria[l]};
