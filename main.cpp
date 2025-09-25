@@ -5,6 +5,11 @@ int main(){
     vector<Documento*> Libreria; 
     CargarLibreria(Libreria); 
     ArreglarArreglo(Libreria); 
-    EntregarDocumento(Libreria); 
+    bool V {true}; 
+    while(V == true){
+        V = Menu(Libreria); 
+    }
+
+  
     return 0; 
 }

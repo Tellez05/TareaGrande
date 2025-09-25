@@ -1,7 +1,7 @@
 #include "Functions.h"
 
 void CargarLibreria(vector<Documento*> &Libreria){
-    ifstream archivo("Texto.txt");
+    ifstream archivo("bitacora.txt");
     string linea; 
 
     while(getline(archivo, linea)){
@@ -97,15 +97,34 @@ void ArreglarArreglo(vector<Documento*> &Libreria){
     Arreglarminiarreglos(MesOCT, Libreria,contador); 
 
     ArreglarTiempoCompleto(Libreria);
-    ImprimirTodo(Libreria);
 }
 
-void EntregarDocumento(vector<Documento*> Libreria){
+void EntregarDocumento(vector<Documento*> Libreria, int inicio, int final){
     
     ofstream Myfile("S");
-    for(auto *Linea:Libreria){
-        Myfile << Linea->RegresarLinea() <<endl;;
-    } 
-
+    for(int i {inicio}; i <= final; i++){
+        Libreria[i] -> RegresarLinea(); 
+    }
     Myfile.close();
+}
+void SacarBusq(vector<Documento*> Libreria){ 
+
+}
+
+bool Menu(vector<Documento*> Libreria){
+    cout<<"Menu: "<<endl; 
+    cout<<"1.- Busqueda"<<endl; 
+    cout<<"2.- Salir"<<endl; 
+    cout<<"Opcion: "; 
+    int opcion {0}; 
+    cin >> opcion ; 
+    if(opcion == 1){
+        return true; 
+    }else if(opcion == 2){
+        return false; 
+    } 
+    else{
+        cout<<"Opcion invalida"<<endl; 
+        return true;
+    }
 }
