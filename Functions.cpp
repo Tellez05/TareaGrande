@@ -9,13 +9,11 @@ void CargarLibreria(vector<Documento*> &Libreria){
         Libreria.push_back(Linea);
     }
 }
-
 void ImprimirTodo(vector<Documento*> Libreria){
     for(auto *Linea: Libreria){
         Linea -> Imprimir(); 
     }
 }
-
 void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> &LibreriaGrande,int &contador){
     for(int  i {0}; i < Libreriachica.size();i++){
         Documento* Keypuntero {Libreriachica[i]};
@@ -33,7 +31,6 @@ void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> 
         contador ++; 
     }
 }
-
 void ArreglarTiempoCompleto(vector<Documento*> &Libreria) {
     int n = Libreria.size();
     for(int i {0}; i < n; i++){
@@ -64,8 +61,7 @@ void ArreglarTiempoCompleto(vector<Documento*> &Libreria) {
         i = j - 1; 
     }
 }
-
-void ArreglarArreglo(vector<Documento*> &Libreria){ 
+void ArreglarArreglo(vector<Documento*> &Libreria, vector<int> &IndicesMeses){ 
     int contadorH {0}; 
     int contador {0};
     vector<Documento*> MesJUN; 
@@ -97,21 +93,51 @@ void ArreglarArreglo(vector<Documento*> &Libreria){
     Arreglarminiarreglos(MesOCT, Libreria,contador); 
 
     ArreglarTiempoCompleto(Libreria);
-}
 
-void EntregarDocumento(vector<Documento*> Libreria, int inicio, int final){
+    int JUN, FJUN, JUL, FJUL, AUG, FAUG, SEP, FSEP,OCT, FOCT; 
+    JUN = 0;
+    FJUN = MesJUN.size()-1; 
+    JUL = FJUL + 1;
+    FJUL = JUL+MesJUL.size();
+    AUG = FAUG + 1; 
+    FAUG = AUG + MesAUG.size(); 
+    SEP = FAUG + 1; 
+    FSEP = SEP + MesSEP.size(); 
+    OCT = FSEP + 1; 
+    FOCT = Libreria.size(); 
+    IndicesMeses.push_back(JUN);
+    IndicesMeses.push_back(FJUN);
+    IndicesMeses.push_back(JUL);
+    IndicesMeses.push_back(FJUL);
+    IndicesMeses.push_back(AUG);
+    IndicesMeses.push_back(FAUG);
+    IndicesMeses.push_back(SEP);
+    IndicesMeses.push_back(FSEP);
+    IndicesMeses.push_back(OCT);
+    IndicesMeses.push_back(FOCT);
+
+}
+void EntregarDocumento(vector<Documento*> Libreria){
     
-    ofstream Myfile("S");
-    for(int i {inicio}; i <= final; i++){
-        Libreria[i] -> RegresarLinea(); 
+    ofstream Myfile("BitacoraOrdenada1.3-eq1");
+    for(int i {0}; i < Libreria.size(); i++){
+        Myfile << Libreria[i] -> RegresarLinea()<<endl; 
     }
     Myfile.close();
 }
-void SacarBusq(vector<Documento*> Libreria){ 
+
+void SacarBusq(vector<Documento*> Libreria, int contadorInicio, int contadorFinal){ 
 
 }
 
-bool Menu(vector<Documento*> Libreria){
+void EntregarDocumentoBusq(vector<Documento*> Libreria, vector<int> IndiceMeses){
+
+}
+string CreadorNombre(int contador){
+    string numero {to_string(contador)};
+    return "Salida"+numero+"-eq5"; 
+}
+bool Menu(vector<Documento*> Libreria, vector<int> IndiceMeses){
     cout<<"Menu: "<<endl; 
     cout<<"1.- Busqueda"<<endl; 
     cout<<"2.- Salir"<<endl; 
@@ -119,6 +145,7 @@ bool Menu(vector<Documento*> Libreria){
     int opcion {0}; 
     cin >> opcion ; 
     if(opcion == 1){
+        EntregarDocumentoBusq(Libreria, IndiceMeses); 
         return true; 
     }else if(opcion == 2){
         return false; 

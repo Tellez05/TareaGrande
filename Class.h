@@ -9,7 +9,6 @@
 using namespace std; 
 
 class Documento{
-    
     private: 
     string Mes; 
     string diaString; 
@@ -20,7 +19,6 @@ class Documento{
     int Segundos; 
     string IP; 
     string Razon; 
-    
     public: 
     Documento(string linea); 
     void Imprimir(); 
