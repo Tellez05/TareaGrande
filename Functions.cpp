@@ -1,5 +1,13 @@
+/*
+Andres Tellez Bermudez Matricula: A01640907
+Luis Eduardo Michel    Matricula: A01641578
+Jared Rafael Garcia    Matricula: A01640914
+Fecha: 25/09/2025
+Tarea 1.3
+*/
 #include "Functions.h"
 
+//Tiempo de Ejecucion O(N)
 void CargarLibreria(vector<Documento*> &Libreria){
     ifstream archivo("bitacora.txt");
     string linea; 
@@ -9,11 +17,7 @@ void CargarLibreria(vector<Documento*> &Libreria){
         Libreria.push_back(Linea);
     }
 }
-void ImprimirTodo(vector<Documento*> Libreria){
-    for(auto *Linea: Libreria){
-        Linea -> Imprimir(); 
-    }
-}
+//Tiempo de Ejecucion O(n^2)
 void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> &LibreriaGrande,int &contador){
     for(int  i {0}; i < Libreriachica.size();i++){
         Documento* Keypuntero {Libreriachica[i]};
@@ -31,6 +35,7 @@ void Arreglarminiarreglos(vector<Documento*> &Libreriachica, vector<Documento*> 
         contador ++; 
     }
 }
+//Tiempo de Ejecucion O(n^2)
 void ArreglarTiempoCompleto(vector<Documento*> &Libreria) {
     int n = Libreria.size();
     for(int i {0}; i < n; i++){
@@ -61,6 +66,7 @@ void ArreglarTiempoCompleto(vector<Documento*> &Libreria) {
         i = j - 1; 
     }
 }
+//Tiempo de Ejecucion O(n^2)
 void ArreglarArreglo(vector<Documento*> &Libreria, vector<int> &IndicesMeses){ 
     int contadorH {0}; 
     int contador {0};
@@ -117,6 +123,7 @@ void ArreglarArreglo(vector<Documento*> &Libreria, vector<int> &IndicesMeses){
     IndicesMeses.push_back(FOCT);
 
 }
+//Tiempo de Ejecucion O(n)
 void EntregarDocumento(vector<Documento*> Libreria){
     
     ofstream Myfile("BitacoraOrdenada1.3-eq1");
@@ -125,14 +132,14 @@ void EntregarDocumento(vector<Documento*> Libreria){
     }
     Myfile.close();
 }
-
+//Tiempo de Ejecucion O(1)
 void SacarDiaMes(string &PrimerMes, string &SegundoMes, int &PrimerDia, int &SegundoDia, string PrimeraBusqueda, string SegundaBusqueda){
     stringstream ss(PrimeraBusqueda);
     ss >> PrimerMes >> PrimerDia;
     stringstream ss2(SegundaBusqueda);
     ss2 >> SegundoMes >> SegundoDia;  
 }
-
+//Tiempo de Ejecucion O(n) 
 void SacarPrimerContador (int &contadorInicial ,string PrimerMes, int PrimerDia, vector<int> IndiceMeses, vector<Documento*> Libreria){
     int contadorMes{0};
     int finalMes{0};
@@ -179,7 +186,7 @@ void SacarPrimerContador (int &contadorInicial ,string PrimerMes, int PrimerDia,
 
     
 }
-
+//Tiempo de Ejecucion O(n) 
 void SacarSegundoContador (int &contadorFinal ,string SegundoMes, int SegundoDia, vector<int> IndiceMeses, vector<Documento*> Libreria){
     int contadorMes{0};
     int finalMes{0};
@@ -226,7 +233,7 @@ void SacarSegundoContador (int &contadorFinal ,string SegundoMes, int SegundoDia
 
     
 }
-
+//Tiempo de Ejecucion O(n) 
 void SacarBusq(vector<Documento*> Libreria, vector<int> IndicesMeses, string BusquedaInicial, string BusquedaFinal,  int &contadorInicio, int &contadorFinal){ 
     string PrimerMes, SegundoMes; 
     int PrimerDia, SegundoDia;
@@ -234,7 +241,7 @@ void SacarBusq(vector<Documento*> Libreria, vector<int> IndicesMeses, string Bus
     SacarPrimerContador(contadorInicio, PrimerMes, PrimerDia, IndicesMeses, Libreria);
     SacarSegundoContador(contadorFinal, SegundoMes, SegundoDia, IndicesMeses, Libreria);
 }
-
+//Tiempo de Ejecucion O(n) 
 void EntregarDocumentoBusq(vector<Documento*> Libreria, vector<int> IndiceMeses, int Inicio, int Final, string nombre){
     ofstream MyDocument{nombre};
     for(int i {Inicio}; i <= Final; i++){
@@ -242,10 +249,12 @@ void EntregarDocumentoBusq(vector<Documento*> Libreria, vector<int> IndiceMeses,
     }
     MyDocument.close();
 }
+//Tiempo de Ejecucion O(1) 
 string CreadorNombre(int contador){
     string numero {to_string(contador)};
     return "Salida"+numero+"-eq5"; 
 }
+//Tiempo de Ejecucion O(1) 
 bool Menu(vector<Documento*> Libreria, vector<int> IndiceMeses, int &contador){
     cout<<"Menu: "<<endl; 
     cout<<"1.- Busqueda"<<endl; 
